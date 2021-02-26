@@ -1,7 +1,5 @@
 import { Connection, createConnection, getConnectionOptions } from "typeorm";
 
-// createConnection();
-
 export default async (): Promise<Connection> => {
   const defaultOptions = await getConnectionOptions();
 
@@ -9,12 +7,8 @@ export default async (): Promise<Connection> => {
     Object.assign(defaultOptions, {
       database:
         process.env.NODE_ENV === "test" 
-          ? "nlw4_test" 
+          ? "./src/database/database.test.sqlite "
           : defaultOptions.database,
     })
   );
-
-  // console.log(teste)
-  // return teste;
-  
 }
