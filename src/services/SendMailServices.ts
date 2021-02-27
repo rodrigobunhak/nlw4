@@ -17,8 +17,6 @@ class SendMailService {
         }
       });
 
-      console.log("LOG: " + transporter)
-
       this.client = transporter;
     });
   }
